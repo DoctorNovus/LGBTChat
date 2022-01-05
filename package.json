@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "compile": "rollup -c",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.4.2",
+    "@heroicons/react": "^1.0.5",
+    "express": "^4.17.1",
+    "mongodb": "^4.2.2",
+    "next": "latest",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "ws": "^8.4.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.1",
+    "postcss": "^8.4.5",
+    "rollup": "^2.62.0",
+    "tailwindcss": "^3.0.9"
+  }
+}
