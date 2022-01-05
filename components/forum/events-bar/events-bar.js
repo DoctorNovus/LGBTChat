@@ -1,7 +1,7 @@
 export default function EventsBar() {
   return (
-    <div className="w-[45rem] h-[15rem] bg-gray-200 rounded-md p-6">
-      <div className="w-[25rem]">
+    <div className="w-[55vw] h-[33vh] bg-gray-200 rounded-md p-6">
+      <div className="w-[35vw]">
         <h1 className="text-[30px]">
           Join your community and check out the events!
         </h1>

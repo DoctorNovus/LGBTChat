@@ -18,7 +18,7 @@ export default function NavItem({ src, href, text, logo, reverse, customClickEve
 
         <div
           className={`group-hover:flex flex-row absolute left-[56px] hidden justify-center h-16 z-999 ${
-            reverse ? "scale-x-[-1] translate-x-[-7rem]" : ""
+            reverse ? "scale-x-[-1] translate-x-[-10vw]" : ""
           }`}
         >
           <div className="w-4 m-0 overflow-hidden content-center py-5">

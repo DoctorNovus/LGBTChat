@@ -3,8 +3,8 @@ import user from "../../../public/user.png";
 
 export default function InfoPanel({ title, description }) {
   return (
-    <div className="flex flex-row w-full h-[3rem] items-center">
-      <div className="w-[3.5rem] h-full bg-gray-100 mr-2 p-2 rounded-lg">
+    <div className="flex flex-row w-full h-[6vh] items-center">
+      <div className="w-[4vw] h-full bg-gray-100 mr-2 p-2 rounded-lg">
         <Image src={user} layout="responsive" />
       </div>
       <div className="flex flex-col w-full h-full justify-center">
