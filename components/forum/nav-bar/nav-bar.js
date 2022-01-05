@@ -7,7 +7,7 @@ import add from "../../../public/add.png";
 
 export default function NavSidebar() {
     return (
-        <div className="h-20 w-[63rem] flex bg-gray-200">
+        <div className="h-20 w-full flex bg-gray-200">
             <section className="flex flex-row items-center bg-white text-gray-700 w-full">
                 <div className="flex flex-row items-center">
                     <NavItem src={slider} href="#" text="Show/Hide" customClickEvent={HideSideBar} />
