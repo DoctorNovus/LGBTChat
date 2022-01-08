@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    --magic-zero: rgb(190, 190, 190);
+    --magic-one: rgb(205, 205, 205);
+    --magic-two: rgb(220, 220, 220);
+
+    --text-zero: rgb(0, 0, 0);
+
+    --icon: 0;
+
+    --border-line: rgb(0, 0, 0);
+
+    --bubble-zero: rgb(66, 136, 194);
+}

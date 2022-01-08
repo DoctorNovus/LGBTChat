@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function ForumPost({ icon, title, threadCount, messageCount }){
     return (
-        <div className="w-[55vw] h-[10vh] flex flex-row bg-gray-200 items-center rounded-lg">
+        <div className="w-[55vw] h-[10vh] flex flex-row bg-magic-2 items-center rounded-lg">
             <div className="w-[10vw]">
-                {icon ? <Image src={icon} alt={title} /> : null}
+                {icon ? <Image className="invert-icon" src={icon} alt={title} /> : null}
             </div>
             <div className="w-[25vw]">
                 <p>{title}</p>

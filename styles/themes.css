@@ -1,0 +1,13 @@
+.dark {
+    --magic-zero: rgb(30, 30, 30);
+    --magic-one: rgb(50, 50, 50);
+    --magic-two: rgb(70, 70, 70);
+
+    --text-zero: rgb(215, 215, 215);
+
+    --icon: 1;
+
+    --border-line: rgb(215, 215, 215);
+
+    --bubble-zero: rgb(141, 34, 132);
+}

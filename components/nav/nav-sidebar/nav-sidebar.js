@@ -10,8 +10,8 @@ import logout from "../../../public/logout.png";
 
 export default function NavSidebar() {
     return (
-        <div id="sidebar" className="h-screen w-20 flex bg-gray-200">
-            <aside className="flex flex-col items-center bg-white text-gray-700 shadow h-full">
+        <div id="sidebar" className="h-screen w-20 flex">
+            <aside className="flex flex-col items-center bg-magic-1 text-gray-700 shadow h-full">
                 <ul className="flex flex-col">
                     <NavItem src={logo} href="/" logo />
                 </ul>

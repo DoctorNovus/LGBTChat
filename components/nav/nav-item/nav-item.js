@@ -11,9 +11,9 @@ export default function NavItem({ src, href, text, logo, reverse, customClickEve
         <a
           href={href}
           className="w-20 h-16 px-6 flex flex justify-center items-center w-full
-					focus:text-orange-500 hover:bg-gray-100"
+					focus:text-orange-500 hover:bg-magic-2"
         >
-          <Image className="h-5 w-5" width={x} height={x} src={src} />
+          <Image className="h-5 w-5 invert-icon" width={x} height={x} src={src} />
         </a>
 
         <div
@@ -38,9 +38,9 @@ export default function NavItem({ src, href, text, logo, reverse, customClickEve
         <a
           href={href}
           className="w-20 h-16 px-6 flex flex justify-center items-center w-full
-              focus:text-orange-500 hover:bg-gray-100"
+              focus:text-orange-500 hover:bg-magic-2"
         >
-          <Image className="h-5 w-5" width={x} height={x} src={src} />
+          <Image className="h-5 w-5 invert-icon" width={x} height={x} src={src} />
         </a>
       </li>
     );

@@ -1,5 +1,6 @@
 import "../styles/tailwind.css";
 import "../styles/globals.css";
+import "../styles/themes.css";
 
 import NavSidebar from "../components/nav/nav-sidebar/nav-sidebar";
 
