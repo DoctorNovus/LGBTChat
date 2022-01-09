@@ -4,6 +4,8 @@ import UserAvatar from "../user-avatar/user-avatar";
 
 import slider from "../../../public/slider.png";
 import add from "../../../public/add.png";
+import moon from "../../../public/moon.png";
+
 import { useCallback } from "react";
 
 export default function NavBar({ selected, setSelected }) {
@@ -28,6 +30,13 @@ export default function NavBar({ selected, setSelected }) {
         </div>
         <div className="flex flex-row items-center w-full justify-end mr-4">
           <NavItem
+            src={moon}
+            href="#"
+            text="Switch theme"
+            reverse
+            customClickEvent={() => switchTheme()}
+          />
+          <NavItem
             src={add}
             href="#"
             text="New Post"
@@ -43,4 +52,9 @@ export default function NavBar({ selected, setSelected }) {
 
 export function HideSideBar() {
   document.querySelector("#sidebar").classList.toggle("hidden");
+}
+
+export function switchTheme() {
+  let act = document.querySelector("#main");
+  act.classList.toggle("dark");
 }

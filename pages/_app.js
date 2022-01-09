@@ -6,7 +6,7 @@ import NavSidebar from "../components/nav/nav-sidebar/nav-sidebar";
 
 function MyApp({ Component, pageProps }) {
     return (
-        <div className="flex flex-row w-screen h-screen">
+        <div id="main" className="flex flex-row w-screen h-screen">
             <NavSidebar />
             <Component {...pageProps} />
         </div>
