@@ -14,4 +14,6 @@
     --border-line: rgb(0, 0, 0);
 
     --bubble-zero: rgb(66, 136, 194);
+
+    --blurry: rgba(0, 0, 0, 0.75);
 }

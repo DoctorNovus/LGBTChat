@@ -15,7 +15,8 @@ module.exports = {
         "bl": "var(--border-line)",
         "bubble": {
           0: "var(--bubble-zero)"
-        }
+        },
+        "blurry": "var(--blurry)"
       },
       invert: {
         "icon": "var(--icon)"
