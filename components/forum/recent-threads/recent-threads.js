@@ -1,6 +1,6 @@
 import PostThread from "../post-thread/post-thread";
 
-export default function RecentThreads({ threads = [] }) {
+function RecentThreads({ threads = [] }) {
   return (
     <div className="ml-auto mr-4 w-[20vw] h-fit">
       <p className="text-[20px] mb-4">Recent Threads</p>
@@ -11,3 +11,11 @@ export default function RecentThreads({ threads = [] }) {
     </div>
   );
 }
+
+RecentThreads.getInitialProps = async(ctx) => {
+    const res = await fetch("/api/forum/recents");
+    const json = await res.json();
+    return { threads: json.threads };
+}
+
+export default RecentThreads;

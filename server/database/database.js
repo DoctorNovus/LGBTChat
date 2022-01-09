@@ -21,6 +21,6 @@ export class Database {
         await this.client.connect();
         this.db = await this.client.db(this.dbName);
         this.users = await this.db.collection("users");
-        this.servers = await this.db.collection("servers");
+        this.forums = await this.db.collection("forums");
     }
 }
