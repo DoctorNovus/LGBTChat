@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ForumPost({ icon, title, threadCount, messageCount }){
     return (
@@ -7,7 +8,9 @@ export default function ForumPost({ icon, title, threadCount, messageCount }){
                 {icon ? <Image className="invert-icon" src={icon} alt={title} /> : null}
             </div>
             <div className="w-[25vw]">
-                <p>{title}</p>
+                <Link href={`/forum/${title.toLowerCase()}`}>
+                    <a className="capitalize">{title}</a>
+                </Link>
             </div>
             <div className="flex flex-row w-[20vw] justify-evenly">
                 <div>
