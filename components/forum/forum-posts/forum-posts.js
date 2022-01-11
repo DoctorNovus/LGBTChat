@@ -5,7 +5,7 @@ function ForumPosts() {
   const [posts, setPosts] = useState([]);
 
   useEffect(async () => {
-    const res = await fetch("/api/forum/forums");
+    const res = await fetch("/api/forums");
     const json = await res.json();
     if (!posts || posts.length == 0) setPosts(json);
   });

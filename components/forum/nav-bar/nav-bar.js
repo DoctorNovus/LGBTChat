@@ -8,7 +8,7 @@ import moon from "../../../public/moon.png";
 
 import { useCallback } from "react";
 
-export default function NavBar({ selected, setSelected }) {
+export default function NavBar({ selected, setSelected, indent }) {
   const handlePostChange = useCallback(
     (val) => {
       setSelected(val);
@@ -39,7 +39,7 @@ export default function NavBar({ selected, setSelected }) {
           <NavItem
             src={add}
             href="#"
-            text="New Post"
+            text={`New ${indent == null ? "Forum" : "Post"}`}
             reverse
             customClickEvent={() => handlePostChange(0)}
           />

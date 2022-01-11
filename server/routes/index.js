@@ -1,10 +1,12 @@
 import { ForumRoute } from "./forum";
+import { ForumsRoute } from "./forums";
 import { ServerRoute } from "./server";
 
 export class Routes {
     constructor(api){
         this.api = api;
         this.routes = {
+            "forums": new ForumsRoute(api),
             "forum": new ForumRoute(api)
         };
     }

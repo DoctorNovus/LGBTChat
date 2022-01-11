@@ -6,6 +6,7 @@ import CreatePost from "../components/forum/create-post/create-post";
 import { useState } from "react";
 import RecentThreads from "../components/forum/recent-threads/recent-threads";
 import LatestResources from "../components/forum/latest-resources/latest-resources";
+
 function Forum({ posts }) {
   const [selected, setSelected] = useState(null);
 

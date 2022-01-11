@@ -83,7 +83,35 @@ class Route {
 class ForumRoute extends Route {
   get = [
     {
-      path: "forum/forums",
+      path: "forum/:name",
+      exec: async(req, res, api, user, params) => {
+        const { name } = params;
+
+        if(!name){
+          res.status(404).end("No name was provided.");
+          return;
+        }
+
+        let forum = await api.db.forums.findOne({ name });
+        if(!forum || typeof forum === "undefined"){
+          res.status(404).end("Forum not found");
+        } else {
+          let entity = {
+            name: forum.name,
+            threads: forum.threads
+          };
+
+          res.end(JSON.stringify(entity));
+        }
+      }
+    }
+  ];
+}
+
+class ForumsRoute extends Route {
+  get = [
+    {
+      path: "forums",
       exec: async (req, res, api, user, params) => {
         await api.db.forums.find({}).toArray((err, doc) => {
           if (!doc || err) {
@@ -108,13 +136,19 @@ class ForumRoute extends Route {
         });
       },
     },
+    {
+      path: "forum/:id",
+      exec: async(req, res, api, user, params) => {
+        console.log(params);
+      }
+    }
   ];
 
   // { name: "This is a test thread to see length xD", author: "Hiro" }
 
   post = [
     {
-      path: "forum/forums",
+      path: "forums",
       exec: async (req, res, api, user, params) => {
         let body = "";
         req.on("data", (chunk) => (body += chunk));
@@ -145,6 +179,7 @@ class Routes {
     constructor(api){
         this.api = api;
         this.routes = {
+            "forums": new ForumsRoute(api),
             "forum": new ForumRoute(api)
         };
     }
