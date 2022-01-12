@@ -21,7 +21,7 @@ export class ForumsRoute extends Route {
           doc = doc.map((doc) => ({
             title: doc.name,
             threadCount: doc.threads.length,
-            messageCount: mCount
+            messageCount: mCount,
           }));
 
           res.send(JSON.stringify(doc));
@@ -29,14 +29,21 @@ export class ForumsRoute extends Route {
       },
     },
     {
-      path: "forum/:id",
-      exec: async(req, res, api, user, params) => {
+      path: "forums/:id",
+      exec: async (req, res, api, user, params) => {
         console.log(params);
+      },
+    },
+    {
+      path: "forums/:name/threads",
+      exec: async(req, res, api, user, params) => {
+        let { name } = params;
+        let forum = await api.db.forums.findOne({ name });
+        console.log(forum);
+        res.send(JSON.stringify(forum.threads));
       }
     }
   ];
-
-  // { name: "This is a test thread to see length xD", author: "Hiro" }
 
   post = [
     {
@@ -53,12 +60,26 @@ export class ForumsRoute extends Route {
               return;
             }
 
-          if (body.name) {
-            let ent = await api.db.forums.findOne({ name: body.name });
+          let name = body.name;
+          let child;
+
+          if (name && body.parent) {
+            name = body.parent;
+            child = body.name;
+          }
+
+          if (name) {
+            let ent = await api.db.forums.findOne({ name });
             if (!ent) {
               await api.db.forums.insertOne({ name: body.name, threads: [] });
+              res.end({ message: "Forum made" });
             } else {
-              res.status(400).end("Forum name taken");
+              if (!child) res.status(400).end({ message: "Forum name taken" });
+              else {
+                ent.threads.push({ name: child, posts: [] });
+                await api.db.forums.updateOne({ name }, { $set: ent });
+                res.end({ message: "Thread added" });
+              }
             }
           }
         });

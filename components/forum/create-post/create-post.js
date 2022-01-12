@@ -1,6 +1,6 @@
 import PopupOverlay from "../../overlay/popup-overlay/popup-overlay";
 
-export default function CreatePost({ selected, setSelected }) {
+export default function CreatePost({ selected, setSelected, forum = "" }) {
   if (selected == null) return <></>;
   if (selected == 0)
     return (
@@ -17,11 +17,11 @@ export default function CreatePost({ selected, setSelected }) {
               className="flex flex-col items-center"
               onSubmit={(e) => {
                 e.preventDefault();
-                CreateForum(e);
+                CreateForum(e, forum.length > 0 ? forum : null);
               }}
             >
               <label htmlFor="name" className="mb-2">
-                Forum Name
+                {forum.length <= 0 ? "Forum Name" : "Thread Name"}
               </label>
               <input name="name" type="text" className="mb-4" />
               <button
@@ -75,12 +75,12 @@ export default function CreatePost({ selected, setSelected }) {
     );
 }
 
-function CreateForum(e) {
+function CreateForum(e, parent) {
   let name = e.target[0];
 
   fetch("/api/forums", {
     method: "POST",
-    body: JSON.stringify({ name: name.value }),
+    body: JSON.stringify({ name: name.value, parent }),
   })
     .then((res) => res.json())
     .then((res) => {
@@ -91,6 +91,9 @@ function CreateForum(e) {
 function CreatePostViaForum(e) {
   let forum = e.target[0];
   let name = e.target[1];
+
+  console.log(forum);
+  console.log(name);
 
   forum.value = "";
   name.value = "";

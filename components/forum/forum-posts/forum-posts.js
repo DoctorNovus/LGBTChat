@@ -10,8 +10,6 @@ function ForumPosts() {
     if (!posts || posts.length == 0) setPosts(json);
   });
 
-  console.log(posts);
-
   return (
     <div>
       <p>Community Forums</p>

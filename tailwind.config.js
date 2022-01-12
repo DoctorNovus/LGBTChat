@@ -1,6 +1,5 @@
 module.exports = {
-  content: ["./pages/*.{html,js}", "./components/**/*.{html,js}"],
-  darkMode: "media", // or 'media' or 'class'
+  content: ["./pages/*.{html,js}", "./pages/**/*.{html, js}", "./components/**/*.{html,js}", "./components/**/**/*.{html,js}"],
   theme: {
     extend: {
       colors: {
@@ -20,11 +19,8 @@ module.exports = {
       },
       invert: {
         "icon": "var(--icon)"
-      }
+      },
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 };
